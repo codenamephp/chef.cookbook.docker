@@ -6,7 +6,7 @@
 
 require 'spec_helper'
 
-describe 'chef.cookbook.docker::default' do
+describe 'chef.cookbook.docker::service' do
   context 'When all attributes are default' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
@@ -17,12 +17,9 @@ describe 'chef.cookbook.docker::default' do
       expect { chef_run }.to_not raise_error
     end
     
-    it 'includes the `service` recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.docker::service')
-    end
-    
-    it 'includes the `compose` recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.docker::compose')
+    it 'docker_service[default]' do
+      expect(chef_run).to create_docker_service('default')
+      expect(chef_run).to start_docker_service('default')
     end
   end
 end

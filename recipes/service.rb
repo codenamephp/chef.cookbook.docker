@@ -1,8 +1,9 @@
 #
 # Cookbook:: chef.cookbook.docker
-# Recipe:: default
+# Recipe:: service
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe '::service'
-include_recipe '::compose'
+docker_service 'default' do
+  action [:create, :start]
+end
