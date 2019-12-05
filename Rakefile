@@ -129,9 +129,11 @@ namespace :documentation do
   desc 'Generate changelog from current commit message for release'
   task changelog_release: ['git:setup'] do
     unless version_match.nil?
-      sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
-      sh 'git diff --exit-code CHANGELOG.md' do |ok|
-        sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
+      Dir.chdir(branch_repo) do
+        sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
+        sh 'git diff --exit-code CHANGELOG.md' do |ok|
+          sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
+        end
       end
     end
   end
