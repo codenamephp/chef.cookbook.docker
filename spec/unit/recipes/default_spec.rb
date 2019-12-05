@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: chef.cookbook.docker
 # Spec:: default
@@ -16,11 +18,11 @@ describe 'chef.cookbook.docker::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
-    
+
     it 'includes the `service` recipe' do
       expect(chef_run).to include_recipe('chef.cookbook.docker::service')
     end
-    
+
     it 'includes the `compose` recipe' do
       expect(chef_run).to include_recipe('chef.cookbook.docker::compose')
     end

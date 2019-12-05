@@ -1,0 +1,49 @@
+language: ruby
+dist: xenial
+
+branches:
+  only:
+  - master
+  - dev
+  - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+
+services: docker
+
+env:
+  global:
+  - CHEF_LICENSE=accept
+  - secure: dS7fWe/Q2rCcwqxXS8X2wN5YN6yXWPZfnRpOcXIW/ivSWCpQq5B/ZBPgrXc9EloTtLENUorrynBQIgShl9QvJ8acNkYXNF9mF2fwgQeP3XbZkIGYg8xwQZWiflN5p84QiudG61MyBm5bAi35wJxT5c1g4KeFVV5tmDgO6V4QpTihPFEqsLrQnEKStN4xOIG8A12n7xiQ2ajstLKzLlIwkUxFuIYqMhXRWdLKBzjIQNL2xvATF0WYPK19KUR2/D92hr6kS+9SS+cWaeAFQoVyvJ3vErBJe4byQxiVLqdc5uWbLcRu3ImA+3spTAI2JlZDQ+kXkbhxfbZqzdvz1utMNrhVNtFQdO9ZOy5fIdd9Vnm7sN+4Ih2O5twd48Cn6cuoVhXtMYEOnBOHk28btf6AxpA3MM+5B9Hrqfp8z30CnHPNitMM0KTiUB/O+JP+ZCxTmrSa3Np10l2tGWrk3mgROuRfkLp2wyNqP+H1TBkgGJmEgBoAtLGNbiIDHNbQ73PLqtiCqv8vbyn7WmSlm9zbQHyf44tiYYo19DQNswJGl28+m5LaCQ/y90CX2m4B/rOCHb6fPHGU35pXdFq0v3xLSMHToN3S7m15Sb/OrOt2t7Hd03AO828vgpsr9BRE6OQUXbYLTA95eGMZfin3ESNyyUNArEPlBsuhGeNl3A/rc9Q=
+
+addons:
+  apt:
+    sources:
+    - chef-current-xenial
+    packages:
+    - chefdk
+
+install:
+- sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+- eval "$(chef shell-init bash)"
+- openssl aes-256-cbc -K $encrypted_f6ac716f1c72_key -iv $encrypted_f6ac716f1c72_iv -in codenamephp.pem.enc -out codenamephp.pem -d
+- gem install github_changelog_generator
+- gem install activesupport
+
+script:
+- chef exec rake
+
+deploy:
+- provider: script
+  on:
+    branch: master
+  skip_cleanup: true
+  script: chef exec rake release
+
+after_script:
+- test $TRAVIS_PULL_REQUEST = false && chef exec rake documentation
+
+notifications:
+  slack:
+    on_success: change
+    on_failure: always
+    rooms:
+      secure: BMKbQOvmF3nYbK5ETvD17UgzqPeWRNcwTyjil6QyjmwYvfE4T6dVV0J16KroNMgXNAIG21AYQqTV/HA600EZrpK9RupfhtNs5zIqII1Tu1fh9PDzwaLyF4W8xc31l5Z6M7pvgv21DC+qxejT5Xz3bhdstyYD2cXz42wQpfiIxzZqNYThNDuTU9J0AUdTcYtdeagJ1N9zQp6mq5GMD2agz6Vf565TSRH1jZRQ1YjAg5wlrpTV0rGyXqTwwA7tJwOXvsFCTPrNCYnzhausD8yyNU1ZMPl0kM/poReh5rlOYtSfEAEvbfpntWnu6qGVWdoMQBIS+cqso178/ByOMGRhjBTTBINe7ImNebv+SJNvG/fQnN6m9hkQjvAf5+GGMQYakm/jMg416me/Bf+4vOx+v1yA4r7eYLEALsnoNbKE36xbwQFVukqANsXlFi2bihjEPYyx4vuNT0ASSUmnjQ7Y5d7+FGsabnyCpT1MDx6cK38IsEOEeEnGHfPMphYWUvvxe5vaa3wgb6GS2vSFfR0VH9QOYJzZjC9rlKX0H8GIeFbloFN3Lo3VHfgVPwV0C01NWaOpIr1QGJhcu0ZX4fheQxTI/AoY5bWTqlZYlHNiw/L3jMrM2ARSjcSB5gW3pcvTy2SAvmICINfj++3hO9hn79b4IzN4NcxvPahUFHrxMjk=

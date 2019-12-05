@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: chef.cookbook.docker
 # Spec:: default
@@ -16,7 +18,7 @@ describe 'chef.cookbook.docker::service' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
-    
+
     it 'docker_service[default]' do
       expect(chef_run).to create_docker_service('default')
       expect(chef_run).to start_docker_service('default')
