@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-name 'chef.cookbook.docker'
+name 'codenamephp_docker'
 maintainer 'Bastian Schwarz'
 maintainer_email 'bastian@codename-php.de'
 license 'Apache-2.0'
