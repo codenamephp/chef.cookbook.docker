@@ -45,7 +45,7 @@ namespace :style do
   require 'rubocop/rake_task'
   desc 'Run Ruby style checks using rubocop'
   RuboCop::RakeTask.new(:ruby) do |task|
-    task.options = ['-a']
+    task.options = ['-a'] unless ci?
   end
 
   require 'foodcritic'
@@ -112,7 +112,7 @@ task :integration, %i[regexp action] => ci? || use_dokken? ? %w[integration:dokk
 
 namespace :documentation do
   version_match = Regexp.new('\[RELEASE\s([\d\.]+)\]').match(ENV['TRAVIS_COMMIT_MESSAGE'])
-    
+
   desc 'Generate changelog'
   task changelog: ['git:setup'] do
     branch_repo = "/#{Dir.home}/#{ENV['TRAVIS_REPO_SLUG']}"
