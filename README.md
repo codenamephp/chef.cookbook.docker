@@ -24,7 +24,7 @@ This is jsut a wrapper cookbook for [docker][docker-github] and [docker_compose]
 Add the cookbook to your Berksfile:
 
 ```ruby
-cookbook 'chef.cookbook.docker', :github 'codenamephp/chef.cookbook.docker'
+cookbook 'codenamephp_docker', :github 'codenamephp/codenamephp_docker'
 ```
 
 Add the cookbook to your runlist, e.g. in a role:
@@ -35,7 +35,7 @@ Add the cookbook to your runlist, e.g. in a role:
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-	  "recipe[chef.cookbook.docker]"
+	  "recipe[codenamephp_docker]"
   ]
 }
 ```

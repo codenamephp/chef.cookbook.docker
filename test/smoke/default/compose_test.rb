@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Inspec test for recipe chef.cookbook.docker::compose
+# Inspec test for recipe codenamephp_docker::compose
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/

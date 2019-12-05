@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 #
-# Cookbook:: chef.cookbook.docker
+# Cookbook:: codenamephp_docker
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.docker::compose' do
+describe 'codenamephp_docker::compose' do
   context 'When all attributes are default, on an Ubuntu 16.04' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
