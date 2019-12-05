@@ -1,5 +1,5 @@
 language: ruby
-dist: trusty
+dist: bionic
 
 branches:
   only:
@@ -17,7 +17,7 @@ env:
 addons:
   apt:
     sources:
-    - chef-current-xenial
+    - chef-current-bionic
     packages:
     - chefdk
 
