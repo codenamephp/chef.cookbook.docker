@@ -8,7 +8,7 @@ This is jsut a wrapper cookbook for [docker][docker-github] and [docker_compose]
 
 ### Supported Platforms
 
-- Debian Stretch
+- Debian Buster
 
 ### Chef
 
