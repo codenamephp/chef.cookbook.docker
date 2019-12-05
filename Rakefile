@@ -128,11 +128,9 @@ namespace :documentation do
   desc 'Generate changelog from current commit message for release'
   task changelog_release: ['git:setup'] do
     unless version_match.nil?
-      Dir.chdir(ENV['TRAVIS_BUILD_DIR']) do
-        sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
-        sh 'git diff --exit-code CHANGELOG.md' do |ok|
-          sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
-        end
+      sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
+      sh 'git diff --exit-code CHANGELOG.md' do |ok|
+        sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
       end
     end
   end
@@ -143,6 +141,7 @@ task documentation: %w[documentation:changelog]
 namespace :release do
   desc 'Tag and release to supermarket with stove'
   task stove: ['git:setup'] do
+    sh 'git diff'
     sh 'chef exec stove --username codenamephp --key ./codenamephp.pem'
   end
 
