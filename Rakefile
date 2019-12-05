@@ -141,7 +141,7 @@ task documentation: %w[documentation:changelog]
 namespace :release do
   desc 'Tag and release to supermarket with stove'
   task stove: ['git:setup'] do
-    sh 'pwd'
+    sh 'git ls-files . --exclude-standard --others'
     sh 'git diff'
     sh 'chef exec stove --username codenamephp --key ./codenamephp.pem'
   end
