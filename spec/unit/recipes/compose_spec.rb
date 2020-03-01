@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 #
-# Cookbook:: chef.cookbook.docker
+# Cookbook:: codenamephp_docker
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.docker::compose' do
+describe 'codenamephp_docker::compose' do
   context 'When all attributes are default, on an Ubuntu 16.04' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
@@ -16,7 +16,7 @@ describe 'chef.cookbook.docker::compose' do
     end
 
     before(:each) do
-      allow_any_instance_of(Mixlib::ShellOut).to receive_message_chain(:run_command, :stdout).and_return('some version')
+      allow_any_instance_of(Mixlib::ShellOut).to receive_message_chain(:run_command, :stdout).and_return('someversion')
     end
 
     it 'converges successfully' do
@@ -39,7 +39,7 @@ describe 'chef.cookbook.docker::compose' do
 
     it 'downloads the autocompletion for the actual version into the bash folder' do
       expect(chef_run).to create_remote_file('download bash completion').with(
-        source: 'https://raw.githubusercontent.com/docker/compose/some version/contrib/completion/bash/docker-compose',
+        source: 'https://raw.githubusercontent.com/docker/compose/someversion/contrib/completion/bash/docker-compose',
         path: '/etc/bash_completion.d/docker-compose',
         owner: 'root',
         group: 'root',

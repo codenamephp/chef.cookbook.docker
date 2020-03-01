@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 #
-# Cookbook:: chef.cookbook.docker
+# Cookbook:: codenamephp_docker
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.docker::default' do
+describe 'codenamephp_docker::default' do
   context 'When all attributes are default' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
@@ -20,11 +20,11 @@ describe 'chef.cookbook.docker::default' do
     end
 
     it 'includes the `service` recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.docker::service')
+      expect(chef_run).to include_recipe('codenamephp_docker::service')
     end
 
     it 'includes the `compose` recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.docker::compose')
+      expect(chef_run).to include_recipe('codenamephp_docker::compose')
     end
   end
 end

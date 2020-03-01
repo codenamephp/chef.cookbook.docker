@@ -14,7 +14,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef.cookbook.docker::default]
+      - recipe[codenamephp_docker::default]
     verifier:
       inspec_tests:
         - test/smoke/default

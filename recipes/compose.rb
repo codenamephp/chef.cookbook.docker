@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Cookbook:: chef.cookbook.docker
+# Cookbook:: codenamephp_docker
 # Recipe:: compose
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
