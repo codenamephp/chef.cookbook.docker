@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.docker/tree/HEAD)
+## [v1.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/v1.0.0) (2019-12-05)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/951a0df238d8e441008f098178f5366882a6e3d0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/951a0df238d8e441008f098178f5366882a6e3d0...v1.0.0)
 
 **Closed issues:**
 
@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- \[RELEASE 1.0.0\] [\#5](https://github.com/codenamephp/chef.cookbook.docker/pull/5) ([bastianschwarz](https://github.com/bastianschwarz))
 - \[RELEASE 1.0.0\] [\#4](https://github.com/codenamephp/chef.cookbook.docker/pull/4) ([bastianschwarz](https://github.com/bastianschwarz))
 
 
