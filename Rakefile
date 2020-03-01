@@ -45,7 +45,7 @@ namespace :style do
   require 'rubocop/rake_task'
   desc 'Run Ruby style checks using rubocop'
   RuboCop::RakeTask.new(:ruby) do |task|
-    task.options = ['-a']
+    task.options = ['-a'] unless ci?
   end
 
   require 'foodcritic'
@@ -116,7 +116,6 @@ namespace :documentation do
   desc 'Generate changelog'
   task changelog: ['git:setup'] do
     branch_repo = "/#{Dir.home}/#{ENV['TRAVIS_REPO_SLUG']}"
-
     sh "git clone 'https://#{ENV['GH_TOKEN']}@github.com/#{ENV['TRAVIS_REPO_SLUG']}.git' --branch #{origin_branch} --single-branch #{branch_repo}" unless File.directory?(branch_repo)
     Dir.chdir(branch_repo) do
       sh format("github_changelog_generator -u#{changelog_user} -p#{changelog_project} -t #{ENV['GH_TOKEN']} %<version>s", version: ("--future-release #{version_match[1]}" unless version_match.nil?))
@@ -129,11 +128,9 @@ namespace :documentation do
   desc 'Generate changelog from current commit message for release'
   task changelog_release: ['git:setup'] do
     unless version_match.nil?
-      Dir.chdir(branch_repo) do
-        sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
-        sh 'git diff --exit-code CHANGELOG.md' do |ok|
-          sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
-        end
+      sh "github_changelog_generator -u #{changelog_user} -p #{changelog_project} -t #{ENV['GH_TOKEN']} --future-release #{version_match[1]}"
+      sh 'git diff --exit-code CHANGELOG.md' do |ok|
+        sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
       end
     end
   end
@@ -144,6 +141,8 @@ task documentation: %w[documentation:changelog]
 namespace :release do
   desc 'Tag and release to supermarket with stove'
   task stove: ['git:setup'] do
+    sh 'git ls-files . --exclude-standard --others'
+    sh 'git diff'
     sh 'chef exec stove --username codenamephp --key ./codenamephp.pem'
   end
 
