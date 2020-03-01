@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.docker/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/v1.0.0...HEAD)
+
+**Merged pull requests:**
+
+- \[RELEASE 1.0.1\] [\#6](https://github.com/codenamephp/chef.cookbook.docker/pull/6) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v1.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/v1.0.0) (2019-12-05)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/951a0df238d8e441008f098178f5366882a6e3d0...v1.0.0)
