@@ -4,6 +4,7 @@ name 'codenamephp_docker'
 maintainer 'Bastian Schwarz'
 maintainer_email 'bastian@codename-php.de'
 license 'Apache-2.0'
+description 'Installs/Configures codenamephp_docker'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 long_description 'Installs/Configures chef.cookbook.docker'
 version '1.0.1'
