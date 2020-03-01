@@ -28,7 +28,7 @@ def changelog_project
   ENV['CHANGELOG_PROJECT'].presence || 'chef.cookbook.docker'
 end
 
-task default: %w[style unit integration]
+task default: %w[style unit]
 
 namespace :git do
   desc 'Setting up git for pushing'
