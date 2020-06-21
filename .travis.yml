@@ -26,7 +26,7 @@ install:
 script: 
   - chef exec foodcritic .
   - chef exec rubocop
-  - chef exec kitchen test
+  - travis_retry chef exec kitchen test
 
 before_deploy:
   - chef exec knife cookbook metadata from file metadata.rb
