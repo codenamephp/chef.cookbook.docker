@@ -1,8 +1,8 @@
 # Chef Cookbook Docker
 
-The default cookbook installs docker, makes sure the docker service is running and installs docker compose.
+The default cookbook installs docker, makes sure the docker service is running.
 
-This is jsut a wrapper cookbook for [docker][docker-github] and [docker_compose][docker-compose-github]
+This is jsut a wrapper cookbook for [docker][docker-github]
 
 ## Requirements
 
@@ -17,7 +17,6 @@ This is jsut a wrapper cookbook for [docker][docker-github] and [docker_compose]
 ### Cookbook Depdendencies
 
 - [docker][docker-github]
-- [docker_compose][docker-compose-github]
 
 ## Usage
 
@@ -41,4 +40,3 @@ Add the cookbook to your runlist, e.g. in a role:
 ```
 
 [docker-github]: https://github.com/chef-cookbooks/docker
-[docker-compose-github]: https://github.com/sboschert/chef-cookbook-docker_compose

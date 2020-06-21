@@ -1,7 +1,11 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'bin/**'
     - 'bundler/**'
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
 
 Metrics/LineLength:
   Max: 250
