@@ -12,5 +12,5 @@ source_url 'https://github.com/codenamephp/chef.cookbook.docker'
 
 supports 'debian'
 
-depends 'docker', '~> 4.10'
+depends 'docker', '~> 6.0'
 depends 'docker_compose', '~> 0.1'
