@@ -2,7 +2,7 @@
 
 The default cookbook installs docker, makes sure the docker service is running.
 
-This is jsut a wrapper cookbook for [docker][docker-github]
+This is just a wrapper cookbook for [docker][docker-github]
 
 ## Requirements
 

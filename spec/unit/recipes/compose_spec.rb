@@ -23,10 +23,6 @@ describe 'codenamephp_docker::compose' do
       expect { chef_run }.to_not raise_error
     end
 
-    it 'includes the `docker_compose::installation` recipe' do
-      expect(chef_run).to include_recipe('docker_compose::installation')
-    end
-
     it 'creates the bash autocomplete directory if not exists ' do
       expect(chef_run).to create_directory('create bash directory').with(
         path: '/etc/bash_completion.d',

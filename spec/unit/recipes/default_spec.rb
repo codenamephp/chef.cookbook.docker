@@ -22,9 +22,5 @@ describe 'codenamephp_docker::default' do
     it 'includes the `service` recipe' do
       expect(chef_run).to include_recipe('codenamephp_docker::service')
     end
-
-    it 'includes the `compose` recipe' do
-      expect(chef_run).to include_recipe('codenamephp_docker::compose')
-    end
   end
 end
