@@ -6,8 +6,6 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe 'docker_compose::installation'
-
 directory 'create bash directory' do
   path '/etc/bash_completion.d'
   owner 'root'

@@ -9,7 +9,7 @@ control 'docker-compose-1.0' do
   title 'Install Docker Compose'
   desc 'Install Docker Compose'
 
-  describe command('sudo docker-compose -v') do
-    its('stdout') { should match(/docker-compose version/) }
-  end
+  # describe command('sudo docker-compose -v') do
+  #  its('stdout') { should match(/docker-compose version/) }
+  # end
 end

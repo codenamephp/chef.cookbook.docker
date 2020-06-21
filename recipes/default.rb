@@ -7,4 +7,3 @@
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 include_recipe '::service'
-include_recipe '::compose'

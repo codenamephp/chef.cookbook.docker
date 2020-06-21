@@ -13,9 +13,6 @@ provisioner:
   
 platforms:
   - name: debian-10
-    lifecycle:
-      pre_converge:
-      - remote: curl -I https://github.com/docker/compose/releases/download/1.8.0/docker-compose-Linux-x86_64
     driver:
       image: dokken/debian-10
       pid_one_command: /bin/systemd
