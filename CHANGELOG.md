@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/0.0.1) (2020-06-21)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/v1.0.1...0.0.1)
+
+**Closed issues:**
+
+- Simplify build [\#9](https://github.com/codenamephp/chef.cookbook.docker/issues/9)
+
+**Merged pull requests:**
+
+- Dev [\#10](https://github.com/codenamephp/chef.cookbook.docker/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.docker/tree/v1.0.1) (2020-03-01)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/v1.0.0...v1.0.1)
