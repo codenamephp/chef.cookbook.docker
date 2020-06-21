@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.0.1](https://github.com/codenamephp/chef.cookbook.docker/tree/0.0.1) (2020-06-21)
+## [2.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/0.0.1) (2020-06-21)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/v1.0.1...0.0.1)
 
