@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.0.0) (2020-07-04)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/2.0.0...3.0.0)
+
+**Implemented enhancements:**
+
+- Recreate docker compose as resource [\#11](https://github.com/codenamephp/chef.cookbook.docker/issues/11)
+- Rework into resources [\#8](https://github.com/codenamephp/chef.cookbook.docker/issues/8)
+
+**Fixed bugs:**
+
+- docker-compose cannot be executed [\#2](https://github.com/codenamephp/chef.cookbook.docker/issues/2)
+
+**Merged pull requests:**
+
+- Recreating recipes as resources [\#14](https://github.com/codenamephp/chef.cookbook.docker/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [2.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/2.0.0) (2020-06-21)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/v1.0.1...2.0.0)
