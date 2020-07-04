@@ -23,20 +23,16 @@ This is just a wrapper cookbook for [docker][docker-github]
 Add the cookbook to your Berksfile:
 
 ```ruby
-cookbook 'codenamephp_docker', :github 'codenamephp/codenamephp_docker'
+cookbook 'codenamephp_docker'
 ```
 
-Add the cookbook to your runlist, e.g. in a role:
+Use the resources as needed in a wrapper cookbook. You can check out some examples either in this readme or in the test/fixtures/test cookbook.
 
-```json
-{
-  "name": "default",
-  "chef_type": "role",
-  "json_class": "Chef::Role",
-  "run_list": [
-	  "recipe[codenamephp_docker]"
-  ]
-}
-```
+## Resources
+### Service
+Uses the `docker_service` resource to install docker and create and start the service.
+
+#### Actions
+- `install`(default): Installs docker and creates and starts the service
 
 [docker-github]: https://github.com/chef-cookbooks/docker
