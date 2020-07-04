@@ -2,7 +2,7 @@ driver:
   name: dokken
   chef_version: current
   privileged: true # because Docker and SystemD/Upstart
-    
+
 transport:
   name: dokken
 
@@ -10,7 +10,7 @@ provisioner:
   name: dokken
   deprecations_as_errors: true
   chef_license: accept
-  
+
 platforms:
   - name: debian-10
     driver:

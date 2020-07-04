@@ -22,9 +22,7 @@ action :install do
   end
 
   remote_file 'download bash completion' do
-    source lazy {
-      "https://raw.githubusercontent.com/docker/compose/#{Mixlib::ShellOut.new("docker-compose --version | awk 'NR==1{print $NF}'").run_command.stdout.strip}/contrib/completion/bash/docker-compose"
-    }
+    source lazy { compose_bash_completion_url }
     path '/etc/bash_completion.d/docker-compose'
     owner 'root'
     group 'root'
@@ -36,5 +34,10 @@ end
 action_class do
   def compose_url
     new_resource.version == 'latest' ? 'https://github.com/docker/compose/releases/latest/download/run.sh' : "https://github.com/docker/compose/releases/download/#{new_resource.version}/run.sh"
+  end
+
+  def compose_bash_completion_url
+    version = Mixlib::ShellOut.new("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").run_command.stdout.strip
+    "https://raw.githubusercontent.com/docker/compose/#{version}/contrib/completion/bash/docker-compose"
   end
 end
