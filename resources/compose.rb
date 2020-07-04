@@ -33,13 +33,14 @@ end
 
 action_class do
   def compose_url
-    new_resource.version == 'latest' ? 'https://github.com/docker/compose/releases/latest/download/run.sh' : "https://github.com/docker/compose/releases/download/#{new_resource.version}/run.sh"
+    distro = Mixlib::ShellOut.new('uname -s').run_command.stdout.strip
+    arch = Mixlib::ShellOut.new('uname -m').run_command.stdout.strip
+    file = "docker-compose-#{distro}-#{arch}"
+
+    new_resource.version == 'latest' ? "https://github.com/docker/compose/releases/latest/download/#{file}" : "https://github.com/docker/compose/releases/download/#{new_resource.version}/#{file}"
   end
 
   def compose_bash_completion_url
-    test = Mixlib::ShellOut.new('docker-compose -v').run_command.stdout.strip
-    puts "Version: #{test}"
-
     version = Mixlib::ShellOut.new("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").run_command.stdout.strip
     "https://raw.githubusercontent.com/docker/compose/#{version}/contrib/completion/bash/docker-compose"
   end
