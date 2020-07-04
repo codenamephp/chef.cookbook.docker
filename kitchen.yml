@@ -14,8 +14,8 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[codenamephp_docker::default]
+      - recipe[test]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
