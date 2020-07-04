@@ -5,6 +5,8 @@ addons:
     packages:
       - chef-workstation
 
+if: sender != "github-actions[bot]"
+
 branches:
   only:
   - master
