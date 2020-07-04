@@ -4,6 +4,8 @@
 
 *.pem
 *.pem.enc
+.travis.yml
+.rubocop.yml
 
 # OS generated files #
 ######################
