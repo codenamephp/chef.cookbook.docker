@@ -38,7 +38,7 @@ action_class do
 
   def compose_bash_completion_url
     test = Mixlib::ShellOut.new('docker-compose -v').run_command.stdout.strip
-    puts test
+    puts "Version: #{test}"
 
     version = Mixlib::ShellOut.new("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").run_command.stdout.strip
     "https://raw.githubusercontent.com/docker/compose/#{version}/contrib/completion/bash/docker-compose"
