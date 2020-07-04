@@ -19,7 +19,10 @@ describe 'codenamephp_docker::compose' do
     end
 
     before(:each) do
-      allow_any_instance_of(Mixlib::ShellOut).to receive_message_chain(:run_command, :stdout).and_return('someversion')
+      allow(Mixlib::ShellOut).to receive(:new).and_call_original
+      allow(Mixlib::ShellOut).to receive(:new).with('uname -s').and_return(double(run_command: double(stdout: 'somedist')))
+      allow(Mixlib::ShellOut).to receive(:new).with('uname -m').and_return(double(run_command: double(stdout: 'somearch')))
+      allow(Mixlib::ShellOut).to receive(:new).with("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").and_return(double(run_command: double(stdout: 'someversion')))
     end
 
     it 'converges successfully' do
@@ -28,7 +31,7 @@ describe 'codenamephp_docker::compose' do
 
     it 'downloads docker-compose' do
       expect(chef_run).to create_remote_file('download docker-compose').with(
-        source: 'https://github.com/docker/compose/releases/latest/download/run.sh',
+        source: 'https://github.com/docker/compose/releases/latest/download/docker-compose-somedist-somearch',
         path: '/usr/local/bin/docker-compose',
         owner: 'root',
         group: 'root',
@@ -64,13 +67,20 @@ describe 'codenamephp_docker::compose' do
       end
     end
 
+    before(:each) do
+      allow(Mixlib::ShellOut).to receive(:new).and_call_original
+      allow(Mixlib::ShellOut).to receive(:new).with('uname -s').and_return(double(run_command: double(stdout: 'somedist')))
+      allow(Mixlib::ShellOut).to receive(:new).with('uname -m').and_return(double(run_command: double(stdout: 'somearch')))
+      allow(Mixlib::ShellOut).to receive(:new).with("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").and_return(double(run_command: double(stdout: 'someversion')))
+    end
+
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
 
     it 'downloads docker-compose' do
       expect(chef_run).to create_remote_file('download docker-compose').with(
-        source: 'https://github.com/docker/compose/releases/download/someversion/run.sh',
+        source: 'https://github.com/docker/compose/releases/download/someversion/docker-compose-somedist-somearch',
         path: '/usr/local/bin/docker-compose',
         owner: 'root',
         group: 'root',
