@@ -23,11 +23,11 @@ install:
 - eval "$(chef shell-init bash)"
 - openssl aes-256-cbc -K $encrypted_f6ac716f1c72_key -iv $encrypted_f6ac716f1c72_iv -in codenamephp.pem.enc -out codenamephp.pem -d
 
-script: 
+script:
   - chef exec foodcritic .
   - chef exec rubocop
   - chef exec rspec
-  - travis_retry chef exec kitchen test
+  - chef exec kitchen test
 
 before_deploy:
   - chef exec knife cookbook metadata from file metadata.rb
