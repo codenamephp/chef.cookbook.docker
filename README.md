@@ -55,7 +55,7 @@ Installs docker-compose as a docker image using the run script wrapper from dock
 With minimal properties:
 ```ruby
 # Install
-codenamephp_docker_service 'Install docker'
+codenamephp_docker_compose 'Install docker-compose'
 ```
 
 With custom version:
