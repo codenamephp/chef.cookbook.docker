@@ -8,6 +8,18 @@
 
 - Updated to docker 7 [\#16](https://github.com/codenamephp/chef.cookbook.docker/pull/16) ([bastianschwarz](https://github.com/bastianschwarz))
 
+**Merged pull requests:**
+
+- \[RELEASE\] 3.1.0 [\#15](https://github.com/codenamephp/chef.cookbook.docker/pull/15) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [3.1.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.1.0) (2020-09-29)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.0.0...3.1.0)
+
+**Implemented enhancements:**
+
+- Updated to docker 7 [\#16](https://github.com/codenamephp/chef.cookbook.docker/pull/16) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.0.0) (2020-07-04)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/2.0.0...3.0.0)
