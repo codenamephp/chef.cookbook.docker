@@ -7,6 +7,7 @@
 **Implemented enhancements:**
 
 - Remove codenamephp\_docker dependency [\#18](https://github.com/codenamephp/chef.cookbook.docker/issues/18)
+- Added dns property to docker\_service resource [\#20](https://github.com/codenamephp/chef.cookbook.docker/pull/20) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.1.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.1.0) (2020-09-29)
 
