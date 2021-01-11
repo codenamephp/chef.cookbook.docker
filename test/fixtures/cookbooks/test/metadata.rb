@@ -10,4 +10,3 @@ version '1.0.0'
 supports 'debian', '~>10.0'
 
 depends 'codenamephp_docker'
-depends 'resolver'
