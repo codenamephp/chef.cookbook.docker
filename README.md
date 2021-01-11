@@ -35,11 +35,26 @@ Uses the `docker_service` resource to install docker and create and start the se
 #### Actions
 - `install`: Installs docker and creates and starts the service
 
+#### Properties
+- `dns`: String or String Array of dns servers that will be used by the docker service, defaults to `['8.8.8.8', '8.8.4.4']` (google dns)
+
 #### Examples
 With minimal properties:
 ```ruby
 # Install
 codenamephp_docker_service 'Install docker'
+```
+
+With custom dns:
+```ruby
+# Install
+codenamephp_docker_service 'Install docker' do
+  dns '127.0.0.1'
+end
+
+codenamephp_docker_service 'Install docker' do
+  dns ['127.0.0.1', '::1']
+end
 ```
 
 ### Compose

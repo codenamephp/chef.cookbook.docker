@@ -10,3 +10,7 @@ describe service('docker') do
   it { should be_enabled }
   it { should be_running }
 end
+
+describe command('systemctl status docker') do
+  its('stdout') { should include('--dns=8.8.8.8 --dns=8.8.4.4') }
+end
