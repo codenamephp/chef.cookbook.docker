@@ -13,16 +13,16 @@ describe 'codenamephp_docker::compose' do
 
   step_into :codenamephp_docker_compose
 
+  stubs_for_provider('codenamephp_docker_compose[Install docker-compose]') do |provider|
+    allow(provider).to receive_shell_out()
+    allow(provider).to receive_shell_out('uname -s', stdout: 'somedist')
+    allow(provider).to receive_shell_out('uname -m', stdout: 'somearch')
+    allow(provider).to receive_shell_out("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'", stdout: 'someversion')
+  end
+
   context 'When all attributes are default' do
     recipe do
       codenamephp_docker_compose 'Install docker-compose'
-    end
-
-    before(:each) do
-      allow(Mixlib::ShellOut).to receive(:new).and_call_original
-      allow(Mixlib::ShellOut).to receive(:new).with('uname -s').and_return(double(run_command: double(stdout: 'somedist')))
-      allow(Mixlib::ShellOut).to receive(:new).with('uname -m').and_return(double(run_command: double(stdout: 'somearch')))
-      allow(Mixlib::ShellOut).to receive(:new).with("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").and_return(double(run_command: double(stdout: 'someversion')))
     end
 
     it 'converges successfully' do
@@ -65,13 +65,6 @@ describe 'codenamephp_docker::compose' do
       codenamephp_docker_compose 'Install docker-compose' do
         version 'someversion'
       end
-    end
-
-    before(:each) do
-      allow(Mixlib::ShellOut).to receive(:new).and_call_original
-      allow(Mixlib::ShellOut).to receive(:new).with('uname -s').and_return(double(run_command: double(stdout: 'somedist')))
-      allow(Mixlib::ShellOut).to receive(:new).with('uname -m').and_return(double(run_command: double(stdout: 'somearch')))
-      allow(Mixlib::ShellOut).to receive(:new).with("docker-compose -v | grep version | awk -F'[ ,]+' '{print $3}'").and_return(double(run_command: double(stdout: 'someversion')))
     end
 
     it 'converges successfully' do

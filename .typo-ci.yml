@@ -1,0 +1,13 @@
+---
+
+dictionaries:
+  - en
+
+excluded_files:
+  - "*.enc"
+  - ".typo-ci.yml"
+  - "chefignore"
+  - "Berksfile"
+  - ".github/*"
+
+excluded_words:

@@ -1,11 +1,14 @@
 # Put files/directories that should be ignored in this file when uploading
-# to a chef-server or supermarket.
+# or sharing to the community site.
 # Lines that start with '# ' are comments.
 
+chefignore
 *.pem
 *.pem.enc
 .travis.yml
-.rubocop.yml
+.chef
+.rubocop
+.typo-ci.yml
 
 # OS generated files #
 ######################
@@ -35,6 +38,7 @@ tmtags
 .project
 .settings
 mkmf.log
+.vscode
 
 ## COMPILED ##
 ##############
@@ -47,6 +51,7 @@ a.out
 *.dll
 *.exe
 */rdoc/
+bin
 
 # Testing #
 ###########
@@ -56,16 +61,8 @@ spec/*
 spec/fixtures/*
 test/*
 features/*
-examples/*
 Guardfile
 Procfile
-.kitchen*
-.rubocop.yml
-spec/*
-Rakefile
-.travis.yml
-.foodcritic
-.codeclimate.yml
 
 # SCM #
 #######
@@ -86,18 +83,16 @@ Berksfile
 Berksfile.lock
 cookbooks/*
 tmp
-
-# Policyfile #
-##############
-Policyfile.rb
-Policyfile.lock.json
+.berkshelf
 
 # Cookbooks #
 #############
-CONTRIBUTING*
+CONTRIBUTING
 CHANGELOG*
 TESTING*
 MAINTAINERS.toml
+kitchen*.yml
+*.pem
 
 # Strainer #
 ############
@@ -110,3 +105,8 @@ Strainerfile
 ###########
 .vagrant
 Vagrantfile
+
+# Ruby
+*.lock
+Rakefile
+.bundle

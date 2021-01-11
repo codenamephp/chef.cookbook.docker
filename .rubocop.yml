@@ -4,11 +4,8 @@ AllCops:
     - 'bin/**'
     - 'bundler/**'
 
-Layout/EndOfLine:
-  EnforcedStyle: lf
-
-Metrics/LineLength:
-  Max: 250
+Layout/LineLength:
+  Max: 160
 
 Metrics/BlockLength:
   Exclude:
