@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+
+unified_mode true
+
 property :dns, [String, Array], default: ['8.8.8.8', '8.8.4.4'], description: 'DNS settings to pass to the service configuration'
 
 action :install do

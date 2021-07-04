@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+unified_mode true
+
 property :version, String, default: 'latest', description: 'The version of docker-compose to install, defaults to "latest"'
 
 action :install do
