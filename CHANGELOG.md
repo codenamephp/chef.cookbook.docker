@@ -14,6 +14,10 @@
 - Bump dev-drprasad/delete-tag-and-release from 0.1.3 to 0.2.0 [\#32](https://github.com/codenamephp/chef.cookbook.docker/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump tubone24/update\_release from 1.1.0 to 1.2.0 [\#31](https://github.com/codenamephp/chef.cookbook.docker/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
 
+## [3.3.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.3.0) (2021-07-04)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.2.0...3.3.0)
+
 ## [3.2.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.2.0) (2021-01-11)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.1.0...3.2.0)
