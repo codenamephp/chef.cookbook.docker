@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.2.0...HEAD)
 
+**Implemented enhancements:**
+
+- Added unified\_mode [\#34](https://github.com/codenamephp/chef.cookbook.docker/pull/34) ([bastianschwarz](https://github.com/bastianschwarz))
+
 **Merged pull requests:**
 
 - Bump bobheadxi/deployments from 0.4.3 to 0.6.0 [\#33](https://github.com/codenamephp/chef.cookbook.docker/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
