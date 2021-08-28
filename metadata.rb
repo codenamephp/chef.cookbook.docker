@@ -5,11 +5,11 @@ maintainer 'Bastian Schwarz'
 maintainer_email 'bastian@codename-php.de'
 license 'Apache-2.0'
 description 'Installs/Configures codenamephp_docker'
-version '3.3.0'
+version '3.3.1'
 chef_version '>= 15.3'
 issues_url 'https://github.com/codenamephp/chef.cookbook.docker/issues'
 source_url 'https://github.com/codenamephp/chef.cookbook.docker'
 
 supports 'debian'
 
-depends 'docker', '~> 7.0'
+depends 'docker', '~> 8.0'
