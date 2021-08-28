@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.3.1](https://github.com/codenamephp/chef.cookbook.docker/tree/3.3.1) (2021-08-28)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.3.0...3.3.1)
+
+**Merged pull requests:**
+
+- Updated docker dependency [\#36](https://github.com/codenamephp/chef.cookbook.docker/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.3.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.3.0) (2021-07-04)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.2.0...3.3.0)
