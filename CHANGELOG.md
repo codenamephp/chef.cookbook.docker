@@ -67,7 +67,6 @@
 **Merged pull requests:**
 
 - Recreating recipes as resources [\#14](https://github.com/codenamephp/chef.cookbook.docker/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
-- \[RELEASE\] 3.0.0 [\#13](https://github.com/codenamephp/chef.cookbook.docker/pull/13) ([github-actions[bot]](https://github.com/apps/github-actions))
 
 ## [2.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/2.0.0) (2020-06-21)
 
@@ -79,6 +78,7 @@
 
 **Merged pull requests:**
 
+- \[RELEASE\] 3.0.0 [\#13](https://github.com/codenamephp/chef.cookbook.docker/pull/13) ([github-actions[bot]](https://github.com/apps/github-actions))
 - \[RELEASE\] 0.0.1 [\#12](https://github.com/codenamephp/chef.cookbook.docker/pull/12) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Dev [\#10](https://github.com/codenamephp/chef.cookbook.docker/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
 
