@@ -2,7 +2,7 @@
 
 unified_mode true
 
-property :version, String, default: 'latest', description: 'The version of docker-compose to install, defaults to "latest"'
+property :version, String, default: '1.29.2', description: 'The version of docker-compose to install, defaults to "latest"'
 
 action :install do
   remote_file 'download docker-compose' do
