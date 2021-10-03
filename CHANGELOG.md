@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.4.0) (2021-10-03)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.3.1...3.4.0)
+
+**Implemented enhancements:**
+
+- Docker Compose 2 support [\#38](https://github.com/codenamephp/chef.cookbook.docker/pull/38) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.3.1](https://github.com/codenamephp/chef.cookbook.docker/tree/3.3.1) (2021-08-28)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.3.0...3.3.1)
