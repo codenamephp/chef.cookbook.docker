@@ -4,20 +4,6 @@ The default cookbook installs docker, makes sure the docker service is running.
 
 This is just a wrapper cookbook for [docker][docker-github]
 
-## Requirements
-
-### Supported Platforms
-
-- Debian Buster
-
-### Chef
-
-- Chef 13.1+
-
-### Cookbook Depdendencies
-
-- [docker][docker-github]
-
 ## Usage
 
 Add the cookbook to your Berksfile:
@@ -57,11 +43,38 @@ codenamephp_docker_service 'Install docker' do
 end
 ```
 
-### Compose
-Installs docker-compose as a docker image using the run script wrapper from docker-compose github. The bash completion is also installed.
+### Compose2
+Installs docker compose cli plugin.
 
 #### Actions
 - `install`: Installs docker-compose and bash completion
+
+#### Properties
+- `version`: The desired version as string, defaults to `'latest'`
+
+#### Examples
+With minimal properties:
+```ruby
+# Install
+codenamephp_docker_compose2 'Install docker-compose'
+```
+
+With custom version:
+```ruby
+codenamephp_docker_compose2 'Install docker-compose' do
+  version '2.0.1'
+end
+```
+
+### Compose
+Installs docker-compose (v1) as a docker image using the run script wrapper from docker-compose github. The bash completion is also installed.
+
+#### Deprecated
+This resource has been deprecated and will be removed with the next major release. Use the `codenamephp_docker_compose2` resource instead.
+
+#### Actions
+- `install`: Installs docker-compose and bash completion
+- `uninstall`: Uninstalls docker-compose and bash completion
 
 #### Properties
 - `version`: The desired version as string, defaults to `'latest'`
