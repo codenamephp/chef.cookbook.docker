@@ -15,8 +15,19 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[test]
+      - recipe[test::default]
+      - recipe[test::compose2]
     verifier:
       inspec_tests:
         - test/integration/default
+        - test/integration/compose2
+    attributes:
+  - name: compose1
+    run_list:
+      - recipe[test::default]
+      - recipe[test::compose1]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+        - test/integration/compose1
     attributes:
