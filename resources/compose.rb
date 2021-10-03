@@ -2,6 +2,8 @@
 
 unified_mode true
 
+deprecated 'The codenamephp_docker_compose resource is deprecated since doocker compose is now a part of the Docker CLI. Use the codenamephp_docker_compose2 resource instead.'
+
 property :version, String, default: '1.29.2', description: 'The version of docker-compose to install, defaults to "latest"'
 
 action :install do
@@ -39,7 +41,7 @@ action_class do
     arch = shell_out('uname -m').stdout.strip
     file = "docker-compose-#{distro}-#{arch}"
 
-    new_resource.version == 'latest' ? "https://github.com/docker/compose/releases/latest/download/#{file}" : "https://github.com/docker/compose/releases/download/#{new_resource.version}/#{file}"
+    "https://github.com/docker/compose/releases/download/#{new_resource.version}/#{file}"
   end
 
   def compose_bash_completion_url

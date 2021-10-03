@@ -31,7 +31,7 @@ describe 'codenamephp_docker::compose' do
 
     it 'downloads docker-compose' do
       expect(chef_run).to create_remote_file('download docker-compose').with(
-        source: 'https://github.com/docker/compose/releases/latest/download/docker-compose-somedist-somearch',
+        source: 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-somedist-somearch',
         path: '/usr/local/bin/docker-compose',
         owner: 'root',
         group: 'root',
@@ -53,28 +53,6 @@ describe 'codenamephp_docker::compose' do
       expect(chef_run).to create_remote_file('download bash completion').with(
         source: 'https://raw.githubusercontent.com/docker/compose/someversion/contrib/completion/bash/docker-compose',
         path: '/etc/bash_completion.d/docker-compose',
-        owner: 'root',
-        group: 'root',
-        mode: '0755'
-      )
-    end
-  end
-
-  context 'With custom version' do
-    recipe do
-      codenamephp_docker_compose 'Install docker-compose' do
-        version 'someversion'
-      end
-    end
-
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
-    end
-
-    it 'downloads docker-compose' do
-      expect(chef_run).to create_remote_file('download docker-compose').with(
-        source: 'https://github.com/docker/compose/releases/download/someversion/docker-compose-somedist-somearch',
-        path: '/usr/local/bin/docker-compose',
         owner: 'root',
         group: 'root',
         mode: '0755'
