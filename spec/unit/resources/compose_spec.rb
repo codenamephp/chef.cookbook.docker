@@ -23,6 +23,9 @@ describe 'codenamephp_docker::compose' do
   context 'When all attributes are default' do
     recipe do
       codenamephp_docker_compose 'Install docker-compose'
+      codenamephp_docker_compose 'Uninstall docker-compose' do
+        action :uninstall
+      end
     end
 
     it 'converges successfully' do
@@ -57,6 +60,11 @@ describe 'codenamephp_docker::compose' do
         group: 'root',
         mode: '0755'
       )
+    end
+
+    it 'deletes the bash completion and docker-compose binary' do
+      expect(chef_run).to delete_file('/user/local/bin/docker-compose')
+      expect(chef_run).to delete_file('/etc/bash_completion.d/docker-compose')
     end
   end
 end

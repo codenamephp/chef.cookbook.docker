@@ -35,6 +35,16 @@ action :install do
   end
 end
 
+action :uninstall do
+  file '/user/local/bin/docker-compose' do
+    action :delete
+  end
+
+  file '/etc/bash_completion.d/docker-compose' do
+    action :delete
+  end
+end
+
 action_class do
   def compose_url
     distro = shell_out('uname -s').stdout.strip

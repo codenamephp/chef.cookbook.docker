@@ -4,20 +4,6 @@ The default cookbook installs docker, makes sure the docker service is running.
 
 This is just a wrapper cookbook for [docker][docker-github]
 
-## Requirements
-
-### Supported Platforms
-
-- Debian Buster
-
-### Chef
-
-- Chef 13.1+
-
-### Cookbook Depdendencies
-
-- [docker][docker-github]
-
 ## Usage
 
 Add the cookbook to your Berksfile:
@@ -62,6 +48,7 @@ Installs docker-compose as a docker image using the run script wrapper from dock
 
 #### Actions
 - `install`: Installs docker-compose and bash completion
+- `uninstall`: Uninstalls docker-compose and bash completion
 
 #### Properties
 - `version`: The desired version as string, defaults to `'latest'`
