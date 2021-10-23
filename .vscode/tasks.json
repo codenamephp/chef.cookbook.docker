@@ -4,15 +4,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Rubocop",
+      "label": "Cookstyle",
       "type": "shell",
-      "command": "rubocop -a",
-      "group": "test"
-    },
-    {
-      "label": "Foodcritic",
-      "type": "shell",
-      "command": "foodcritic .",
+      "command": "cookstyle -a",
       "group": "test"
     },
     {
@@ -22,6 +16,24 @@
       "group": "test"
     },
     {
+      "label": "Berks Install",
+      "type": "shell",
+      "command": "berks install",
+      "group": "none"
+    },
+    {
+      "label": "Berks Update",
+      "type": "shell",
+      "command": "berks update",
+      "group": "none"
+    },
+    {
+      "label": "Berks Outdated",
+      "type": "shell",
+      "command": "berks outdated",
+      "group": "none"
+    },
+    {
       "label": "Kitchen Test",
       "type": "shell",
       "command": "kitchen test"
@@ -29,8 +41,7 @@
     {
       "label": "Lint",
       "dependsOn": [
-        "Rubocop",
-        "Foodcritic"
+        "Cookstyle"
       ],
       "problemMatcher": []
     },
