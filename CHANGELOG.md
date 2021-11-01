@@ -1,12 +1,16 @@
 # Changelog
 
-## [3.5.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.5.0) (2021-10-23)
+## [3.5.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.5.0) (2021-11-01)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.4.0...3.5.0)
 
 **Implemented enhancements:**
 
 - Updated docker dependency to 10.0 [\#40](https://github.com/codenamephp/chef.cookbook.docker/pull/40) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Merged pull requests:**
+
+- Bump bobheadxi/deployments from 0.6.0 to 0.6.1 [\#41](https://github.com/codenamephp/chef.cookbook.docker/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.4.0) (2021-10-03)
 
@@ -47,6 +51,10 @@
 - Remove codenamephp\_docker dependency [\#18](https://github.com/codenamephp/chef.cookbook.docker/issues/18)
 - Added dns property to docker\_service resource [\#20](https://github.com/codenamephp/chef.cookbook.docker/pull/20) ([bastianschwarz](https://github.com/bastianschwarz))
 
+**Merged pull requests:**
+
+- \[RELEASE\] 3.1.0 [\#15](https://github.com/codenamephp/chef.cookbook.docker/pull/15) ([github-actions[bot]](https://github.com/apps/github-actions))
+
 ## [3.1.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.1.0) (2020-09-29)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.docker/compare/3.0.0...3.1.0)
@@ -54,10 +62,6 @@
 **Implemented enhancements:**
 
 - Updated to docker 7 [\#16](https://github.com/codenamephp/chef.cookbook.docker/pull/16) ([bastianschwarz](https://github.com/bastianschwarz))
-
-**Merged pull requests:**
-
-- \[RELEASE\] 3.1.0 [\#15](https://github.com/codenamephp/chef.cookbook.docker/pull/15) ([github-actions[bot]](https://github.com/apps/github-actions))
 
 ## [3.0.0](https://github.com/codenamephp/chef.cookbook.docker/tree/3.0.0) (2020-07-04)
 
